@@ -10,12 +10,14 @@
         android:id="@+id/outertextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        tools:text="1"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview_2"
+        tools:text="1" />
+
+    <LinearLayout
+        android:id="@+id/innerlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"></LinearLayout>
 
 </LinearLayout>

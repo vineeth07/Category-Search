@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -36,8 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(myViewHolder holder, int position) {
 
         holder.outerText.setText(mList.get(position).getId());
-        holder.innerRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        holder.innerRecyclerView.setAdapter(new InnerAdapter(mList.get(position).getArrayList(), mContext));
+        holder.bindRecycler(mList.get(position).getArrayList());
 
     }
 
@@ -46,13 +46,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mList.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder{
+    public class myViewHolder extends RecyclerView.ViewHolder {
         TextView outerText;
-        RecyclerView innerRecyclerView;
+        LinearLayout linearLayout;
+
         public myViewHolder(View itemView) {
             super(itemView);
             outerText = itemView.findViewById(R.id.outertextview);
-            innerRecyclerView = itemView.findViewById(R.id.recyclerview_2);
+            linearLayout = itemView.findViewById(R.id.innerlayout);
+        }
+
+
+        public void bindRecycler(List<String> list) {
+
+            for (int i = 0; i < list.size(); i++) {
+                View view = LayoutInflater.from(mContext).inflate(R.layout.inner_text,linearLayout,false);
+                ((TextView)view.findViewById(R.id.innertext)).setText(list.get(i));
+                linearLayout.addView(view);
+            }
         }
     }
 }

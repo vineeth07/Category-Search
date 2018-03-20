@@ -8,8 +8,8 @@ import java.util.List;
  */
 
 public class Model {
-    String id;
-    List<String> arrayList = new ArrayList<>();
+    private String id;
+    private List<String> arrayList = new ArrayList<>();
 
 
 
