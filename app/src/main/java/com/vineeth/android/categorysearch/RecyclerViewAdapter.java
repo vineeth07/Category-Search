@@ -104,12 +104,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         templist.add(model);
                     }
 
+                    List<String> result = new ArrayList<>();
                     for(String s : model.getArrayList()){
-                        List<String> result = new ArrayList<>();
                         if(s.toLowerCase().contains(charSequence.toString().toLowerCase())){
                             result.add(s);
-                            templist.add(new Model(model.getId(), result));
                         }
+                    }
+                    if(result.size()>0){
+                        templist.add(new Model(model.getId(), result));
                     }
 
                 }
