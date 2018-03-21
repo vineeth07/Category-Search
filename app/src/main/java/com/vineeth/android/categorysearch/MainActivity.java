@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private List<Model> mList = new ArrayList<>();
     private List<String> list1 = new ArrayList<>();
     private List<String> list2 = new ArrayList<>();
-    private Model mModel = new Model();
-    private Model mMode2 = new Model();
     private  String TAG = MainActivity.class.getSimpleName();
     private SearchView searchView;
     private MenuItem searchMenuItem;
@@ -37,14 +35,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mRecyclerView = findViewById(R.id.outer_recycler_view);
-        list1.add("one");list1.add("two");list1.add("three");
-        list2.add("A");list2.add("B");list2.add("C");
-        mModel.setId("clubs");
-        mModel.setArrayList(list1);
-        mList.add(mModel);
-        mMode2.setId("departments");
-        mMode2.setArrayList(list2);
-        mList.add(mMode2);
+        list1.add("Music");list1.add("Movie");list1.add("Crux");
+        list2.add("DoTA");list2.add("DoSM");list2.add("DePP");
+        mList.add(new Model("Clubs", list1));
+        mList.add(new Model("Departments", list2));
         Log.e(TAG,"reached here");
         mRecyclerViewAdapter = new RecyclerViewAdapter(mList,this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
