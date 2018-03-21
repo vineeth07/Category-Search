@@ -94,7 +94,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             FilterResults filterResults = new FilterResults();
             if(charSequence!=null&&charSequence.length()>0)
             {
-                Log.e(TAG,charSequence.toString());
+                Log.d(TAG,charSequence.toString());
                 ArrayList<Model> templist = new ArrayList<>();
 
                 for(Model model:mList)
@@ -103,6 +103,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     {
                         templist.add(model);
                     }
+
+                    for(String s : model.getArrayList()){
+                        List<String> result = new ArrayList<>();
+                        if(s.toLowerCase().equals(charSequence.toString().toLowerCase())){
+                            result.add(s);
+                            templist.add(new Model(model.getId(), result));
+                        }
+                    }
+
                 }
                 filterResults.count = templist.size();
                 filterResults.values = templist;

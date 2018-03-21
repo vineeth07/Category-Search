@@ -11,7 +11,11 @@ public class Model {
     private String id;
     private List<String> arrayList = new ArrayList<>();
 
-
+    public Model(){}
+    public Model(String id, List<String> arrayList){
+        this.id = id;
+        this.arrayList = arrayList;
+    }
 
     public String getId() {
         return id;

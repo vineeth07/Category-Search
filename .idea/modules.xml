@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Category-Search.iml" filepath="$PROJECT_DIR$/Category-Search.iml" />
+      <module fileurl="file://F:\Android dev\MyApplication\Category-Search.iml" filepath="F:\Android dev\MyApplication\Category-Search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://C:\Users\ashwik\AndroidStudioProjects\Category-Search\MyApplication.iml" filepath="C:\Users\ashwik\AndroidStudioProjects\Category-Search\MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
