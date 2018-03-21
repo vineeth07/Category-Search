@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
-         searchView.setIconifiedByDefault(true);
+
+        searchView.setIconifiedByDefault(true);
         searchView.setFocusable(true);
         searchView.setIconified(false);
         searchView.requestFocus();
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
 
 
-        /*searchMenuItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener(){
+        searchMenuItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener(){
             @Override
             public boolean onMenuItemActionExpand(MenuItem item){
                 new Handler().post(new Runnable() {
@@ -91,10 +92,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             }
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item){
+                searchView.setQuery("", false);
+                searchView.clearFocus();
+                mRecyclerViewAdapter.getFilter().filter("");
                 return true;
             }
 
-        });*/
+        });
         return true;
     }
 
